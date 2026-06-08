@@ -39,7 +39,7 @@ Your name;
 • Whether you are able to continue working for or with the Organisation; and
 • What policy has been breached. 
 
-TODO: TypeForm 
+[![https://bsicommunications.typeform.com/complaint](https://img.shields.io/badge/FILE%20A%20COMPLAINT-black.svg)](https://bsicommunications.typeform.com/complaint)
 
 ## Enforcement
 
