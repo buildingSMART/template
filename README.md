@@ -19,9 +19,14 @@ XYZ Working Group...
     - [For developers](#for-developers)
     - [Sample files](#sample-files)
 - [License](#license)
-- [Contributon](#contribution)
-- [Schema](/schema)
-- [Documentation](/documentation)
+- [Contribution](#contribution)
+- [Other relevant pages](#other-relevant-pages)
+
+### Repository structure
+
+├── [schema](/schema) _- this is where the JSON Schema files are stored_ \
+├── [docs](/docs) _- this is the source of documentation_ \
+└── [xyz](/xyz)
 
 ## Quickstart
 
@@ -61,7 +66,7 @@ Have a look at [contribution docs](./contributing.md) for how to...
   <img width="700" src="https://contrib.rocks/image?repo=buildingSMART/IFC4.x-development" />
 </a>
 
-## Other relevant places
+## Other relevant pages
 
 - [buildingsmart.org](https://www.buildingsmart.org/)
 - [www.buildingsmart.org/standards/](https://www.buildingsmart.org/standards/)
