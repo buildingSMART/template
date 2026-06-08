@@ -11,22 +11,22 @@ The purpose of this repository is to support the development and maintenance of 
 buildingSMART develops standards through:
 
 * Open collaboration and community participation
-* Consensus-based decision making
 * Transparent discussions and documented outcomes
+* Consensus-based decision making
 * Formal review and approval processes
-* Long-term interoperability and industry benefit
+* Voting by appropriate committees
 
 ## Roles and Responsibilities
 
 ### Contributors
 
-Anyone may contribute through posting issues, discussions, pull requests and commenting. 
-
-Contributions are welcomed and should follow the repository's [contribution guidelines](./CONTRIBUTING.md). By contributing, participants agree that submissions may become part of buildingSMART deliverables and publications.
+Contributions are welcomed and anyone may contribute through posting issues, discussions, pull requests and commenting. All contributors should follow the repository's [contribution guidelines](./CONTRIBUTING.md). By contributing, participants agree that submissions may become part of buildingSMART deliverables and publications.
 
 Only [Maintainers](#maintainers) can approve PRs, review and merge contributions.
 
 ### Maintainers
+
+The maintainers include bSI Management Office employees, relevant Working Group members and assigned indyviduals. 
 
 Repository maintainers are responsible for:
 
@@ -36,6 +36,12 @@ Repository maintainers are responsible for:
 * Building automation pipelines
 * Manage access
 * Escalating significant decisions to the appropriate buildingSMART groups
+
+### Members
+
+Chapter and Organizational Members who pay annual membership fees. Among othe potential benefits, most members have voting rights as part of the Standards Commitee (SC). Within the SC, there are also techncial (SCTE) and executive (SCE) bodies that assess the proposed updates to standards.
+
+See: [bSI Membership and benefits](https://www.buildingsmart.org/about/get-involved/membership-and-benefits/)
 
 ### buildingSMART Working Groups
 
