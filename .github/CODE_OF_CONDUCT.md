@@ -14,6 +14,17 @@ respectful, professional, and inclusive environment for everyone. By participati
 
 The community has zero tolerance for harassment, bullying, discrimination, violence, or illegal activity. Violations may result in warnings, suspension, or other appropriate actions.
 
+Unacceptable Behavior
+We do not tolerate conduct or speech that is discriminatory, harassing, or otherwise offensive, including, but not limited to:
+
+Racist, sexist, homophobic, transphobic, or ableist language or actions.
+Unwelcome, suggestive, or inappropriate nicknames or terms.
+Disrespectful jokes, innuendo, or dismissive attitudes.
+Intimidation, harassment, or stalking (online or in-person).
+Inappropriate attention or contact (respect others’ boundaries).
+Violence, threats of violence, or unsafe behaviors.
+Sustained disruptions.
+
 ## Making complaints
 
 If you experience or witness unacceptable behavior:
@@ -29,3 +40,13 @@ Your name;
 • What policy has been breached. 
 
 TODO: TypeForm 
+
+## Enforcement
+
+Admins, hosts, or the management office will take appropriate action, which may include, but is not limited to: expulsion and banning from the repository, project, platform, or community, comment deletion, and escalation to GitHub support.
+
+This policy applies to all community members, including maintainers and thoughtbot employees. If you report a thoughtbot employee’s violation of this code of conduct, it will be addressed and handled with discretion as documented in our internal Handbook.
+
+Finally, thank you for helping us create a safe, respectful, and inclusive community. Remember that mistakes are a part of being human; we all make mistakes sometimes. We can work together to address mistakes, learn, and grow through listening, self-reflection, and corrective action.
+
+Hosts or organizers will take appropriate action, which may include, but is not limited to, expulsion and banning from the event, project, platform, or community, comment deletion, and escalation to GitHub support.
