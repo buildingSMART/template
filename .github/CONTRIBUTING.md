@@ -1,41 +1,69 @@
 # Contributing
 
-We love pull requests from everyone. 
+Contributions are welcomed and [anyone](#roles) may contribute through posting comments, discussionns, raising issues (problems or feature requests), and pull requests (direct change suggestions).
 
-By participating in this project, you
-agree to abide by the thoughtbot [code of conduct].
+Some work is limited to the repository [Maintainers](#maintainers) and [buildingSMART Members](#members).
 
-[code of conduct]: https://thoughtbot.com/open-source-code-of-conduct
+By contributing, participants agree to follow:
+- [buildingSMART Code of Conduct](https://www.buildingsmart.org/wp-content/uploads/2023/01/Behaviour-Code-of-Conduct-Policy-2023.pdf)
+- [License agreements and Copyright Notice](LICENSE.md)
+- [Terms of Service](https://www.buildingsmart.org/wp-content/uploads/2026/01/bSI-TermsOfService-Feb-2026.pdf)
+- [Intellectual Property Policy](https://app.box.com/s/rg081ahyq1euw8uw6efql6m2fcofm558)
+- other relevant [policies](https://www.buildingsmart.org/about/policies/)
 
-Fork, then clone the repo:
+Once approved, submissions may become part of buildingSMART deliverables and publications.
 
-    git clone git@github.com:your-username/factory_bot_rails.git
+## How to use GitHub 
 
-Set up your machine:
+If you are new to GitHub platform, you might want to see the [GitHub Introduction](.github/GitHub_intro.md) page first.
 
-    ./bin/setup
+## Contributing guidelines
 
-Make sure the tests pass:
+* Before opening a new issue or pull request, please check the existing ones, perhaps someone already raised it.
+* Keep contributions focused on solving a single issue or bug.
+* Link Pull Requests to Issues by mentioning it. If an issue doesn't exist - add it first.
+* Be specific.
+* Be kind and respectful.
+* Explain the reason behind your feedback.
+* Ask questions when something is unclear.
+* Add examples, screenshots, or links when useful.
+* Avoid sarcasm or vague criticism.
+* Assume good intent.
 
-    rake
+## Roles
 
-Make your change. Add tests for your change. Make the tests pass:
+Anyone can read all content of the public repository, read the [Discussions](https://github.com/buildingSMART/template/discussions) and [Issues](https://github.com/buildingSMART/template/issues), and copy (fork) the materials (in line with [License agreements](LICENSE.md)).
 
-    rake
+### Contributors
 
-Push to your fork and [submit a pull request][pr].
+Contributors are all who engage in the repository from commenting on issues to submitting proposed changes to the standard. Anyone can contribute, not only [buildingSMART Members](#members), but not all contributions will be accepted. That is subject to buildingSMART processes and policies.
 
-[pr]: https://github.com/thoughtbot/factory_bot_rails/compare/
+Contributors can:
+* post [Issues](https://github.com/buildingSMART/template/issues) and comment on them 
+* post and participate in [Discussions](https://github.com/buildingSMART/template/discussions)
+* submit [Pull Requests](https://github.com/buildingSMART/template/pulls) (change proposals)
 
-At this point you're waiting on us. We like to at least comment on pull requests
-within three business days (and, typically, one business day). We may suggest
-some changes or improvements or alternatives.
+GitHub differentiates contributors as all authors of commits that were approved and merged to the repository history. You can see that list here: https://github.com/buildingSMART/template/graphs/contributors?all=1
 
-Some things that will increase the chance that your pull request is accepted:
+### Maintainers
 
-* Write tests.
-* Follow our [style guide][style].
-* Write a [good commit message][commit].
+The maintainers include bSI Management Office employees, relevant Working Group members and assigned indyviduals. 
 
-[style]: https://github.com/thoughtbot/guides/tree/main/general
-[commit]: http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
+Repository maintainers are responsible for:
+
+* Managing issues and pull requests - review, approve, merge etc.
+* Ensuring consistency and quality
+* Coordinating releases
+* Building automation pipelines
+* Manage roles and access rights
+* Escalating significant decisions to the appropriate buildingSMART groups and committes
+
+### Members
+
+Chapter and Organizational Members of buildingSMART International who pay annual membership fees. Members can have voting rights as part of the Standards Commitee (SC). Within the SC, there are also techncial (SCTE) and executive (SCE) bodies that assess the proposed updates to buildingSMART standards.
+
+See: [bSI Membership and benefits](https://www.buildingsmart.org/about/get-involved/membership-and-benefits/)
+
+## Thank you
+
+Thank you for contributing. Clear issues, thoughtful comments, and careful reviews help make this repository better for everyone.

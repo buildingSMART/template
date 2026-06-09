@@ -31,14 +31,6 @@ If you experience or witness unacceptable behavior:
 - first, you should make it known to another party if you find their behaviour unacceptable
 - if this does not stop the problem, then you should put your complaint in writing
 
-Your name;
-• The names of any witnesses;
-• The date of the incident;
-• Specifically what the incident was (what was said/done, by who, the effect that this had);
-• What resolution you are wanting;
-• Whether you are able to continue working for or with the Organisation; and
-• What policy has been breached. 
-
 [![https://bsicommunications.typeform.com/complaint](https://img.shields.io/badge/FILE%20A%20COMPLAINT-black.svg)](https://bsicommunications.typeform.com/complaint)
 
 ## Enforcement
