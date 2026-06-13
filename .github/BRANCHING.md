@@ -53,17 +53,18 @@ gitGraph
    commit id: "006" tag: "1.0.1"
    checkout main
    merge ver/1.0.x
+   
    commit id: "007"
    branch feat/421-coolThing
    checkout feat/421-coolThing
    commit id: "008"
    commit id: "009"
    checkout main  
+   
    branch ver/1.1.x
    checkout main  
    merge feat/421-coolThing
    checkout ver/1.1.x
-   
    merge feat/421-coolThing   
    commit id: "011" tag: "1.1.0"
    checkout main  
