@@ -25,9 +25,9 @@ gitGraph
    checkout ver/1.0.x
    commit
    branch bugfix/561-docs-typo
+   checkout development
    merge ver/1.0.x
    commit
-   checkout development
    branch ver/1.1.x 
    commit tag: "1.1.0"
    commit
