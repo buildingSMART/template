@@ -46,8 +46,10 @@ gitGraph
    commit id: "11"
    checkout main   
    commit id: "12"
-   cherry-pick id:"08" parent:"12"
 ```
+
+<!-- cherry-pick id:"08" parent:"12" -->
+<!-- merge main id:"MERGE" -->
 	
 diagram
 ```mermaid
