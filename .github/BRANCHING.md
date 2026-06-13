@@ -11,21 +11,30 @@ main
     └── hotfix/4.4.1
 ```
 
-Git diagram
+<!-- Guide how to use Mermaid GitGraph: https://mermaid.js.org/syntax/gitgraph.html. -->
 ```mermaid
 ---
-title: Example Git diagram
+title: Branching policy
 ---
 gitGraph
+   commit development
+   commit development
+   branch ver/1.0.x
+   checkout ver/1.0.x
    commit
+   branch bugfix/561-docs-typo
+   merge ver/1.0.x
    commit
-   branch develop
-   checkout develop
+   checkout development
+   branch ver/1.1.x 
+   commit tag: "1.1.0"
    commit
-   commit
-   checkout main
-   merge develop
-   commit
+   commit tag: "1.1.1"
+   branch ver/2.0.x
+   branch feature/421-partOf
+   branch feature/123-grouping
+   checkout development
+   commit id: "1" tag: "1.1.0_vote"
    commit
 ```
 	
