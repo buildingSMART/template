@@ -42,6 +42,9 @@ gitGraph
    checkout ver/1.0.x
    commit id: "003"
    commit id: "004" tag: "1.0.0"
+   checkout main
+   merge ver/1.0.x
+   checkout ver/1.0.x
    branch bugfix/561-tolerance
    checkout bugfix/561-tolerance
    commit id: "005"
@@ -49,6 +52,7 @@ gitGraph
    merge bugfix/561-tolerance
    commit id: "006"
    checkout main
+   merge ver/1.0.x
    commit id: "007"
    branch ver/1.1.x 
    checkout ver/1.1.x 
@@ -67,7 +71,7 @@ gitGraph
    commit id: "014"
    checkout main   
    commit id: "015"
-   commit id: "01"
+   commit id: "016"
 ```
 <!-- cherry-pick id:"08" parent:"12" -->
 <!-- merge main id:"MERGE" -->
