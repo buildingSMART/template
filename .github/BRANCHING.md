@@ -15,29 +15,38 @@ main
 ```mermaid
 ---
 title: Branching policy
+config:
+  theme: 'base'
 ---
 gitGraph
-   branch development
-   checkout development
-   commit
-   commit
+   commit id: "01"
+   commit id: "02"
    branch ver/1.0.x
    checkout ver/1.0.x
-   commit
+   commit id: "03"
    branch bugfix/561-docs-typo
-   checkout development
+   checkout bugfix/561-docs-typo
+   commit id: "04"
    merge ver/1.0.x
-   commit
+   checkout ver/1.0.x
+   commit id: "05"
+   checkout main
    branch ver/1.1.x 
-   commit tag: "1.1.0"
-   commit
-   commit tag: "1.1.1"
-   branch ver/2.0.x
+   checkout ver/1.1.x 
+   commit id: "06"
+   commit id: "07" tag: "1.1.0"
+   commit id: "08"
+   commit id: "09" tag: "1.1.1"
+   checkout main
    branch feature/421-partOf
+   checkout feature/421-partOf
+   commit id: "10"
    branch feature/123-grouping
-   checkout development
-   commit id: "1" tag: "1.1.0_vote"
-   commit
+   checkout feature/123-grouping
+   commit id: "11"
+   checkout main   
+   commit id: "12"
+   cherry-pick id:"08" parent:"12"
 ```
 	
 diagram
