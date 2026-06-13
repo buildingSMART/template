@@ -17,6 +17,7 @@ main
 title: Branching policy
 ---
 gitGraph
+   branch development
    checkout development
    commit
    commit
