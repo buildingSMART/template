@@ -50,27 +50,31 @@ gitGraph
    commit id: "005"
    checkout ver/1.0.x
    merge fix/561-tolerance
-   commit id: "006"
+   commit id: "006" tag: "1.0.1"
    checkout main
    merge ver/1.0.x
    commit id: "007"
-   checkout main
    branch feat/421-coolThing
    checkout feat/421-coolThing
    commit id: "008"
    commit id: "009"
    checkout main  
-   branch ver/1.1.x 
+   branch ver/1.1.x
+   checkout main  
    merge feat/421-coolThing
-   checkout ver/1.1.x 
+   checkout ver/1.1.x
    cherry-pick id: "009"
    commit id: "010"
    commit id: "011" tag: "1.1.0"
+   checkout main  
+   merge ver/1.1.x
+   checkout ver/1.1.x
    commit id: "012"
    commit id: "013" tag: "1.1.1"
    checkout main  
+   merge ver/1.1.x
+   checkout ver/1.1.x
    commit id: "014"
-   commit id: "015"
 ```
 <!-- cherry-pick id:"08" parent:"12" -->
 <!-- merge main id:"MERGE" -->
