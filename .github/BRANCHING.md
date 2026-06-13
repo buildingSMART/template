@@ -21,9 +21,9 @@ These should be short-lived branches created to address a specific need or defec
 |--|--|--|
 | main | main | active development for next future version |
 | version | v1.0.x | maintained release lines of each version |
-| feature | feat/421-coolThing | xxx |
-| bugfix | fix/561-tolerance  | xx |
-| docs | doc/docsTypo  | xx |
+| feature | feat/421-coolThing | implementes new functionality |
+| bugfix | fix/561-tolerance  | solving a reported problem |
+| docs | doc/docsTypo  | explaining or clarifying existing functionality |
 | prototype | proto/new-approach  | no release promise |
 | (tags) | 1.0.1 |  exact, immutable released artifacts |
 
@@ -49,22 +49,25 @@ gitGraph
    merge bugfix/561-tolerance
    commit id: "006"
    checkout main
+   commit id: "007"
    branch ver/1.1.x 
    checkout ver/1.1.x 
-   commit id: "007"
-   commit id: "008" tag: "1.1.0"
-   commit id: "009"
-   commit id: "010" tag: "1.1.1"
+   commit id: "008"
+   commit id: "009" tag: "1.1.0"
+   commit id: "010"
+   commit id: "011" tag: "1.1.1"
    checkout main
    branch feat/421-partOf
    checkout feat/421-partOf
-   commit id: "011"
-   checkout main
-   branch feature/123-grouping
-   checkout feature/123-grouping
    commit id: "012"
-   checkout main   
+   checkout main
+   branch feat/123-grouping
+   checkout feat/123-grouping
    commit id: "013"
+   commit id: "014"
+   checkout main   
+   commit id: "015"
+   commit id: "01"
 ```
 <!-- cherry-pick id:"08" parent:"12" -->
 <!-- merge main id:"MERGE" -->
