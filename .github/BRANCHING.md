@@ -12,7 +12,7 @@ main
 ```
 
 Git diagram
-```
+```mermaid
 ---
 title: Example Git diagram
 ---
