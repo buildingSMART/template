@@ -10,6 +10,24 @@ main
     ├── feature/api-update
     └── hotfix/4.4.1
 ```
+
+Git diagram
+```
+---
+title: Example Git diagram
+---
+gitGraph
+   commit
+   commit
+   branch develop
+   checkout develop
+   commit
+   commit
+   checkout main
+   merge develop
+   commit
+   commit
+```
 	
 diagram
 ```mermaid
@@ -27,6 +45,23 @@ sequenceDiagram
    Hold-->>+Closed: Proposal retracted
    Finalizing-->>+Closed: Proposal retracted
 ```
+
+```mermaid
+sequenceDiagram
+   To Do->>+Draft: Pixar initial review
+   To Do->>+Draft: Community review
+   Draft-->>+Hold: Core proposal needs more iteration
+   Hold-->>-Draft: Pixar core concerns addressed
+   Draft->>+Finalizing: Pixar & community comments addressed
+   Finalizing->>+Published: Final cleanup
+   Published->>+Implemented: Implementation in OpenUSD
+   To Do-->>+Hold: Core proposal needs more iteration
+   To Do-->>+Closed: Proposal retracted
+   Draft-->>+Closed: Proposal retracted
+   Hold-->>+Closed: Proposal retracted
+   Finalizing-->>+Closed: Proposal retracted
+```
+
 
 python
 ```Python
