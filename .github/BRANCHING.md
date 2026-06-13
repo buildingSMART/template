@@ -74,6 +74,7 @@ gitGraph
    checkout main  
    merge ver/1.1.x
    checkout ver/1.1.x
+   checkout main  
    commit id: "014"
 ```
 <!-- cherry-pick id:"08" parent:"12" -->
