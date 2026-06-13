@@ -26,7 +26,12 @@ XYZ Working Group...
 
 ├── [schema](/schema) _- this is where the JSON Schema files are stored_ \
 ├── [docs](/docs) _- this is the source of documentation_ \
-└── [xyz](/xyz)
+│   ├── [SoftwareImplementersDocumentation](/SoftwareImplementersDocumentation) \
+│   ├── [UserManual](/UserManual) \
+│   └── [Examples](/Examples) \
+├── [output](/output) \
+└── [xyz](/xyz) 
+
 
 ## Quickstart
 

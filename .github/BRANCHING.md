@@ -1,15 +1,16 @@
 # Git branching policy
 
-```
-main
-├── release/4.3
-│   ├── feature/4.3-bugfix-a
-│   └── hotfix/4.3.2
-└── release/4.4
-    ├── feature/new-capability
-    ├── feature/api-update
-    └── hotfix/4.4.1
-```
+### What is this?
+
+
+## Principles
+
+The main working branch is the development, which displays the state of the most current standard proposal being developed. Version branches are to be found on branches starting with ver for example ver/1.1.x. The official versions of the standard are marked with tags, for example 1.0.0, and can be also found in GitHub realeses.
+
+main = future
+version branches = maintained release lines
+tags = exact released artifacts
+
 
 <!-- Guide how to use Mermaid GitGraph: https://mermaid.js.org/syntax/gitgraph.html. -->
 ```mermaid
@@ -19,143 +20,43 @@ config:
   theme: 'base'
 ---
 gitGraph
-   commit id: "01"
-   commit id: "02"
+   commit id: "001"
+   commit id: "002"
    branch ver/1.0.x
    checkout ver/1.0.x
-   commit id: "03"
+   commit id: "003"
+   commit id: "004" tag: "1.0.0"
    branch bugfix/561-docs-typo
    checkout bugfix/561-docs-typo
-   commit id: "04"
-   merge ver/1.0.x
+   commit id: "005"
    checkout ver/1.0.x
-   commit id: "05"
+   merge bugfix/561-docs-typo
+   commit id: "006"
    checkout main
    branch ver/1.1.x 
    checkout ver/1.1.x 
-   commit id: "06"
-   commit id: "07" tag: "1.1.0"
-   commit id: "08"
-   commit id: "09" tag: "1.1.1"
+   commit id: "007"
+   commit id: "008" tag: "1.1.0"
+   commit id: "009"
+   commit id: "010" tag: "1.1.1"
    checkout main
    branch feature/421-partOf
    checkout feature/421-partOf
-   commit id: "10"
+   commit id: "011"
+   checkout main
    branch feature/123-grouping
    checkout feature/123-grouping
-   commit id: "11"
+   commit id: "012"
    checkout main   
-   commit id: "12"
+   commit id: "013"
 ```
-
 <!-- cherry-pick id:"08" parent:"12" -->
 <!-- merge main id:"MERGE" -->
 	
-diagram
-```mermaid
-sequenceDiagram
-   To Do->>+Draft: Pixar initial review
-   To Do->>+Draft: Community review
-   Draft-->>+Hold: Core proposal needs more iteration
-   Hold-->>-Draft: Pixar core concerns addressed
-   Draft->>+Finalizing: Pixar & community comments addressed
-   Finalizing->>+Published: Final cleanup
-   Published->>+Implemented: Implementation in OpenUSD
-   To Do-->>+Hold: Core proposal needs more iteration
-   To Do-->>+Closed: Proposal retracted
-   Draft-->>+Closed: Proposal retracted
-   Hold-->>+Closed: Proposal retracted
-   Finalizing-->>+Closed: Proposal retracted
-```
+## Naming convention
 
-```mermaid
-sequenceDiagram
-   To Do->>+Draft: Pixar initial review
-   To Do->>+Draft: Community review
-   Draft-->>+Hold: Core proposal needs more iteration
-   Hold-->>-Draft: Pixar core concerns addressed
-   Draft->>+Finalizing: Pixar & community comments addressed
-   Finalizing->>+Published: Final cleanup
-   Published->>+Implemented: Implementation in OpenUSD
-   To Do-->>+Hold: Core proposal needs more iteration
-   To Do-->>+Closed: Proposal retracted
-   Draft-->>+Closed: Proposal retracted
-   Hold-->>+Closed: Proposal retracted
-   Finalizing-->>+Closed: Proposal retracted
-```
+**Commit name** should be...
+**Branch name** should be...
+**Tag name** should be...
 
-
-python
-```Python
-import test
-
-a = 2.0
-
-print(a)
-
-```
-
-
-
-stl
-```stl
-solid cube_corner
-  facet normal 0.0 -1.0 0.0
-    outer loop
-      vertex 0.0 0.0 0.0
-      vertex 1.0 0.0 0.0
-      vertex 0.0 0.0 1.0
-    endloop
-  endfacet
-  facet normal 0.0 0.0 -1.0
-    outer loop
-      vertex 0.0 0.0 0.0
-      vertex 0.0 1.0 0.0
-      vertex 1.0 0.0 0.0
-    endloop
-  endfacet
-  facet normal -1.0 0.0 0.0
-    outer loop
-      vertex 0.0 0.0 0.0
-      vertex 0.0 0.0 1.0
-      vertex 0.0 1.0 0.0
-    endloop
-  endfacet
-  facet normal 0.577 0.577 0.577
-    outer loop
-      vertex 1.0 0.0 0.0
-      vertex 0.0 1.0 0.0
-      vertex 0.0 0.0 1.0
-    endloop
-  endfacet
-endsolid
-```
-
-
-geojson
-```geojson
-{
-  "type": "FeatureCollection",
-  "features": [
-    {
-      "type": "Feature",
-      "id": 1,
-      "properties": {
-        "ID": 0
-      },
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-              [-90,35],
-              [-90,30],
-              [-85,30],
-              [-85,35],
-              [-90,35]
-          ]
-        ]
-      }
-    }
-  ]
-}
-```
+	
