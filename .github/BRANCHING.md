@@ -28,6 +28,18 @@ sequenceDiagram
    Finalizing-->>+Closed: Proposal retracted
 ```
 
+python
+```Python
+import test
+
+a = 2.0
+
+print(a)
+
+```
+
+
+
 stl
 ```stl
 solid cube_corner
@@ -61,6 +73,7 @@ solid cube_corner
   endfacet
 endsolid
 ```
+
 
 geojson
 ```geojson
