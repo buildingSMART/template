@@ -1,14 +1,20 @@
 # License
 
-This work is licensed under the `Creative Commons Attribution-NoDerivatives 4.0 International` license. 
+### The CC BY-ND 4.0 for releases
 
 <img width="150" alt="CC BY-ND" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/CC_BY-ND.svg/330px-CC_BY-ND.svg.png">
+
+Formal releases (static and immutable) are published under the `Creative Commons Attribution-NoDerivatives 4.0 International` license. 
 
 You are **free to share** — copy and redistribute the material in any medium or format for any purpose, even commercially, under the following terms:
 - **You must give appropriate credit** and provide a link to the license. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
 - If you remix, transform, or build upon the material, **you may not distribute the modified material**.
 
 To view a full text of this license, visit: http://creativecommons.org/licenses/by-nd/4.0/.
+
+### The Apache License 2.0 for work in progress
+
+TBC...
 
 # Copyright Notice
 
