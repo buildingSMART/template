@@ -83,22 +83,22 @@ jobs:
 
             // Prepare AI analysis prompt
             const systemPrompt = `You are an expert technical analyst specializing in issue triage and resolution assessment. 
-Your task is to analyze GitHub issue discussions and determine whether they contain a clear solution or if the discussion remains inconclusive.
-
-Analyze the provided issue discussion and respond with a JSON object containing:
-1. status: One of "CLEAR_RESOLUTION", "CLEAR_SOLUTION", "PARTIAL_SOLUTION", or "INCONCLUSIVE"
-2. conclusion: A brief summary of your findings (1-2 sentences)
-3. reasoning: Detailed explanation of why you reached this conclusion
-4. key_points: Array of 3-5 key findings from the discussion
-5. recommended_next_step: What should be done next (resolve, needs_clarification, needs_implementation, etc)
-
-Guidelines:
-- CLEAR_RESOLUTION: The issue is resolved or has a definitive closure decision (duplicate, wontfix, etc)
-- CLEAR_SOLUTION: The discussion contains a specific, actionable solution that is well-agreed upon
-- PARTIAL_SOLUTION: There is a proposed solution but with caveats, concerns, or lack of consensus
-- INCONCLUSIVE: The discussion does not provide clear guidance on resolution
-
-Return ONLY valid JSON, no additional text.`;
+            Your task is to analyze GitHub issue discussions and determine whether they contain a clear solution or if the discussion remains inconclusive.
+            
+            Analyze the provided issue discussion and respond with a JSON object containing:
+            1. status: One of "CLEAR_RESOLUTION", "CLEAR_SOLUTION", "PARTIAL_SOLUTION", or "INCONCLUSIVE"
+            2. conclusion: A brief summary of your findings (1-2 sentences)
+            3. reasoning: Detailed explanation of why you reached this conclusion
+            4. key_points: Array of 3-5 key findings from the discussion
+            5. recommended_next_step: What should be done next (resolve, needs_clarification, needs_implementation, etc)
+            
+            Guidelines:
+            - CLEAR_RESOLUTION: The issue is resolved or has a definitive closure decision (duplicate, wontfix, etc)
+            - CLEAR_SOLUTION: The discussion contains a specific, actionable solution that is well-agreed upon
+            - PARTIAL_SOLUTION: There is a proposed solution but with caveats, concerns, or lack of consensus
+            - INCONCLUSIVE: The discussion does not provide clear guidance on resolution
+            
+            Return ONLY valid JSON, no additional text.`;
 
             const userPrompt = `Please analyze this GitHub issue discussion:\n\n${discussionText}`;
 
