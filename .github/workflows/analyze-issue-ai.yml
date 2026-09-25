@@ -162,24 +162,24 @@ jobs:
               .join('\n');
 
             const commentBody = `## ${emoji} Automated Issue Analysis
-
-**Status:** \`${analysisResult.status}\`
-
-**Conclusion:** ${analysisResult.conclusion}
-
-### Analysis Details
-
-**Reasoning:**
-${analysisResult.reasoning}
-
-**Key Points:**
-${keyPointsMarkdown}
-
-**Recommended Next Step:** ${analysisResult.recommended_next_step}
-
----
-*Analysis performed using AI (${analysisResult.model_used || modelChoice}) at ${new Date().toISOString()}*
-*This assessment is based on the issue discussion content and should be reviewed by maintainers.*`;
+            
+            **Status:** \`${analysisResult.status}\`
+            
+            **Conclusion:** ${analysisResult.conclusion}
+            
+            ### Analysis Details
+            
+            **Reasoning:**
+            ${analysisResult.reasoning}
+            
+            **Key Points:**
+            ${keyPointsMarkdown}
+            
+            **Recommended Next Step:** ${analysisResult.recommended_next_step}
+            
+            ---
+            *Analysis performed using AI (${analysisResult.model_used || modelChoice}) at ${new Date().toISOString()}*
+            *This assessment is based on the issue discussion content and should be reviewed by maintainers.*`;
 
             await github.rest.issues.createComment({
               owner,
