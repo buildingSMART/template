@@ -1,0 +1,251 @@
+name: Analyze Issue Discussion with AI
+
+on:
+  workflow_dispatch:
+    inputs:
+      issue_number:
+        description: 'Issue number to analyze'
+        required: true
+        type: number
+      model:
+        description: 'AI Model to use'
+        required: true
+        type: choice
+        default: 'gpt-4o-mini'
+        options:
+          - 'gpt-4o'
+          - 'gpt-4o-mini'
+          - 'gpt-4-turbo'
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  analyze-issue:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Analyze issue with AI
+        id: analyze
+        uses: actions/github-script@v7
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const issueNumber = Number('${{ inputs.issue_number }}');
+            const modelChoice = '${{ inputs.model }}';
+            const { owner, repo } = context.repo;
+
+            if (!Number.isInteger(issueNumber) || issueNumber <= 0) {
+              core.setFailed(`Invalid issue number: '${issueNumber}'`);
+              return;
+            }
+
+            // Fetch issue and comments
+            const issue = await github.rest.issues.get({
+              owner,
+              repo,
+              issue_number: issueNumber,
+            });
+
+            const comments = await github.rest.issues.listComments({
+              owner,
+              repo,
+              issue_number: issueNumber,
+              per_page: 100,
+            });
+
+            core.info(`Fetched issue #${issueNumber} with ${comments.data.length} comments`);
+
+            // Build discussion transcript
+            const transcript = [];
+            transcript.push(`## Issue #${issueNumber}: ${issue.data.title || '(untitled)'}\n`);
+            transcript.push(`Status: ${issue.data.state}`);
+            transcript.push(`Created by: ${issue.data.user.login}`);
+            transcript.push(`Created at: ${issue.data.created_at}\n`);
+            transcript.push('### Original Issue Description\n');
+            transcript.push(issue.data.body || '(no description provided)');
+            transcript.push('\n');
+
+            if (comments.data.length > 0) {
+              transcript.push('### Comments\n');
+              comments.data.forEach((comment, index) => {
+                transcript.push(`\n**Comment ${index + 1}** - ${comment.user.login} (${comment.created_at})`);
+                transcript.push(comment.body || '(empty comment)');
+              });
+            } else {
+              transcript.push('### No Comments');
+            }
+
+            const discussionText = transcript.join('\n');
+
+            // Prepare AI analysis prompt
+            const systemPrompt = `You are an expert technical analyst specializing in issue triage and resolution assessment. 
+Your task is to analyze GitHub issue discussions and determine whether they contain a clear solution or if the discussion remains inconclusive.
+
+Analyze the provided issue discussion and respond with a JSON object containing:
+1. status: One of "CLEAR_RESOLUTION", "CLEAR_SOLUTION", "PARTIAL_SOLUTION", or "INCONCLUSIVE"
+2. conclusion: A brief summary of your findings (1-2 sentences)
+3. reasoning: Detailed explanation of why you reached this conclusion
+4. key_points: Array of 3-5 key findings from the discussion
+5. recommended_next_step: What should be done next (resolve, needs_clarification, needs_implementation, etc)
+
+Guidelines:
+- CLEAR_RESOLUTION: The issue is resolved or has a definitive closure decision (duplicate, wontfix, etc)
+- CLEAR_SOLUTION: The discussion contains a specific, actionable solution that is well-agreed upon
+- PARTIAL_SOLUTION: There is a proposed solution but with caveats, concerns, or lack of consensus
+- INCONCLUSIVE: The discussion does not provide clear guidance on resolution
+
+Return ONLY valid JSON, no additional text.`;
+
+            const userPrompt = `Please analyze this GitHub issue discussion:\n\n${discussionText}`;
+
+            let analysisResult;
+
+            try {
+              // Use OpenAI API
+              const openaiKey = process.env.OPENAI_API_KEY;
+              if (!openaiKey) {
+                throw new Error('OPENAI_API_KEY not configured');
+              }
+
+              core.info('Using OpenAI API for analysis');
+              const response = await fetch('https://api.openai.com/v1/chat/completions', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                  'Authorization': `Bearer ${openaiKey}`,
+                },
+                body: JSON.stringify({
+                  model: modelChoice,
+                  messages: [
+                    { role: 'system', content: systemPrompt },
+                    { role: 'user', content: userPrompt },
+                  ],
+                  temperature: 0.3,
+                  max_tokens: 1000,
+                }),
+              });
+
+              if (!response.ok) {
+                const errorData = await response.text();
+                throw new Error(`OpenAI API error: ${response.status} - ${errorData}`);
+              }
+
+              const data = await response.json();
+              const content = data.choices[0].message.content;
+              analysisResult = JSON.parse(content);
+              core.info('Successfully received analysis from OpenAI');
+
+            } catch (error) {
+              core.warning(`AI analysis failed: ${error.message}, falling back to heuristic`);
+              analysisResult = performHeuristicAnalysis(discussionText);
+            }
+
+            // Set outputs
+            core.setOutput('status', analysisResult.status);
+            core.setOutput('conclusion', analysisResult.conclusion);
+            core.setOutput('reasoning', analysisResult.reasoning);
+
+            // Create issue comment
+            const emoji = {
+              'CLEAR_RESOLUTION': '🎯',
+              'CLEAR_SOLUTION': '✅',
+              'PARTIAL_SOLUTION': '⚠️',
+              'INCONCLUSIVE': '❓',
+            }[analysisResult.status] || '❓';
+
+            const keyPointsMarkdown = analysisResult.key_points
+              .map(point => `- ${point}`)
+              .join('\n');
+
+            const commentBody = `## ${emoji} Automated Issue Analysis
+
+**Status:** \`${analysisResult.status}\`
+
+**Conclusion:** ${analysisResult.conclusion}
+
+### Analysis Details
+
+**Reasoning:**
+${analysisResult.reasoning}
+
+**Key Points:**
+${keyPointsMarkdown}
+
+**Recommended Next Step:** ${analysisResult.recommended_next_step}
+
+---
+*Analysis performed using AI (${analysisResult.model_used || modelChoice}) at ${new Date().toISOString()}*
+*This assessment is based on the issue discussion content and should be reviewed by maintainers.*`;
+
+            await github.rest.issues.createComment({
+              owner,
+              repo,
+              issue_number: issueNumber,
+              body: commentBody,
+            });
+
+            // Update workflow summary
+            await core.summary
+              .addHeading(`Issue #${issueNumber} AI Analysis`)
+              .addRaw(`**Status:** ${analysisResult.status}\n`)
+              .addRaw(`**Conclusion:** ${analysisResult.conclusion}\n\n`)
+              .addRaw(`**Reasoning:** ${analysisResult.reasoning}\n\n`)
+              .addRaw('**Key Points:**\n')
+              .addRaw(keyPointsMarkdown)
+              .write();
+
+            function performHeuristicAnalysis(text) {
+              const lowerText = text.toLowerCase();
+
+              const clearResolutionKeywords = [
+                'resolved by', 'fixed by', 'implemented in', 'will be fixed',
+                'duplicate of', 'not a bug', 'working as intended', 'closing as',
+                'won\'t fix', 'root cause is', 'issue was caused by',
+                'this is expected behavior', 'closed as'
+              ];
+
+              const clearSolutionKeywords = [
+                'solution is', 'the fix is', 'we should', 'proposed fix',
+                'should be changed', 'should do', 'the correct approach is',
+                'workaround is', 'the mitigation is', 'this can be solved by',
+                'resolve by', 'fix by', 'root cause is', 'the problem is'
+              ];
+
+              const weakIndicators = [
+                'maybe', 'perhaps', 'could try', 'i think', 'likely', 'possibly',
+                'might be', 'seems like', 'unclear'
+              ];
+
+              let resolutionCount = clearResolutionKeywords.filter(kw => lowerText.includes(kw)).length;
+              let solutionCount = clearSolutionKeywords.filter(kw => lowerText.includes(kw)).length;
+              let weakCount = weakIndicators.filter(kw => lowerText.includes(kw)).length;
+
+              let status, conclusion;
+
+              if (resolutionCount >= 2 || lowerText.includes('closed')) {
+                status = 'CLEAR_RESOLUTION';
+                conclusion = 'The discussion indicates a clear resolution or closure.';
+              } else if (solutionCount >= 2 && weakCount <= 2) {
+                status = 'CLEAR_SOLUTION';
+                conclusion = 'A clear solution has been identified with reasonable consensus.';
+              } else if (solutionCount >= 1 || weakCount >= 3) {
+                status = 'PARTIAL_SOLUTION';
+                conclusion = 'A potential solution exists but lacks full clarity or consensus.';
+              } else {
+                status = 'INCONCLUSIVE';
+                conclusion = 'The discussion does not provide a clear resolution path.';
+              }
+
+              return {
+                status,
+                conclusion,
+                reasoning: 'Heuristic analysis (AI not available)',
+                key_points: ['Heuristic keyword matching used', 'Review manually for accuracy'],
+                recommended_next_step: 'Review and verify manually',
+                model_used: 'heuristic-fallback'
+              };
+            }
