@@ -1,3 +1,6 @@
 {
-  "contributors": []
+  "contributors": "https://cla-manager.buildingsmart.org/api/contributor?checkContributor=",
+  "message": "{{usersWithoutCLA}} please sign the buildingSMART CLA at https://cla-manager.buildingsmart.org/sign",
+  "label": "cla-signed",
+  "recheckComment": "CLA eligibility checked again."
 }
