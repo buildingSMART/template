@@ -13,12 +13,11 @@ Files are organised in this project as follows:
 
 ├── [schema](/schema) _- this is where the JSON Schema files are stored_ \
 ├── [docs](/docs) _- this is the source of documentation_ \
-│   ├── [SoftwareImplementersDocumentation](/SoftwareImplementersDocumentation) \
-│   ├── [UserManual](/UserManual) \
-│   └── [Examples](/Examples) \
+│   ├── [implementationDocumentation](/implementationDocumentation) \
+│   └── [userManual](/userManual) \
 ├── [output](/output) \
-├── [examples](/examples) \ - _example files to help use and implement the standard_
-├── [tests](/tests) \ - _test suit to ensure consistency of implementation_
+├── [examples](/examples) - _example files to help use and implement the standard_ \
+├── [tests](/tests) - _test suit to ensure consistency of implementation_ \
 └── [.github](/.github) - _GitHub-specific policies, workflows, configuration, automation, and templates_
 
 Tooling should be kept outside of the key repository.
