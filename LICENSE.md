@@ -30,7 +30,7 @@ What you are allowed to do with the content of the repository depends on the typ
 
 ## Final Publications License - the CC BY-ND 4.0
 
-<img width="150" alt="CC BY-ND" src=".github/media/CC_BY-ND.svg">
+<img width="150" alt="CC BY-ND" src=".github/assets/CC_BY-ND.svg">
 
 Formal releases (static and immutable) are published under the `Creative Commons Attribution-NoDerivatives 4.0 International` license (CC BY-ND 4.0). View the full license text at: [CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0/deed.en).
 
