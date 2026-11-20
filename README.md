@@ -1,5 +1,8 @@
 ![Banner](.github/assets/readme-banner.png)
 
+> [!WARNING]
+> This repository is a draft template, not an actual buildingSMART standard, project or service. It only contains boilerplate clauses and configuration.
+
 This is the official buildingSMART International GitHub repository for XYZ. 
 
 > [!TIP]
