@@ -6,7 +6,7 @@ This repository is part of the openBIM ecosystem of buildingSMART International,
 
 AI agents contributing to this project must prioritise correctness, maintainability, interoperability, and alignment with applicable buildingSMART International standards.
 
-Before making changes, read the repository's [README](./README.md), [Contributing Guidelines](./CONTRIBUTING.md) (particularly on [AI Assisted Contributions](./CONTRIBUTING.md#ai-assisted-contributions)), and relevant technical documentation to understand the project's purpose, architecture, and conventions.
+Before making changes, read the repository's [README](./README.md), [Contributing Guidelines](./.github/CONTRIBUTING.md) (particularly on [AI Assisted Contributions](./.github/CONTRIBUTING.md#ai-assisted-contributions)), and relevant technical documentation to understand the project's purpose, architecture, and conventions.
 
 Follow any additional project-specific documentation and instructions relevant to the task.
 
@@ -80,7 +80,7 @@ Do not claim that changes have been tested or validated unless the corresponding
 - Avoid introducing insecure dependencies or unsafe data-handling practices.
 - Treat external files, model data, and user input as potentially untrusted.
 - Do not upload or transmit repository contents or user data to external services unless explicitly authorised.
-- Report suspected security vulnerabilities through the designated private reporting process following [SECURITY.md](./SECURITY.md).
+- Report suspected security vulnerabilities through the designated private reporting process following [SECURITY.md](./.github/SECURITY.md).
 
 ## Contributions and Pull Requests
 
