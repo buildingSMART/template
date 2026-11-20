@@ -18,17 +18,25 @@ Inquiries should be addressed to buildingSMART International at [contact@buildin
 
 # License
 
+What you are allowed to do with the content of the repository depends on the type of content.
+
+| Content Type | License |
+|---|---|
+| Final Publications | CC BY-ND 4.0 |
+| Draft specification, documentation, schema | buildingSMART Draft Collaboration Licence |
+| Software, tooling | Apache License 2.0 |
+| Test files, examples, and test suites | CC BY 4.0 (not ND) |
+
+
 ## Final Publications License - the CC BY-ND 4.0
 
-<img width="150" alt="CC BY-ND" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/CC_BY-ND.svg/330px-CC_BY-ND.svg">
+<img width="150" alt="CC BY-ND" src=".github/media/CC_BY-ND.svg">
 
-Formal releases (static and immutable) are published under the `Creative Commons Attribution-NoDerivatives 4.0 International` license ([CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0/deed.en)).
+Formal releases (static and immutable) are published under the `Creative Commons Attribution-NoDerivatives 4.0 International` license (CC BY-ND 4.0). View the full license text at: [CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0/deed.en).
 
 You are **free to share** — copy and redistribute the material in any medium or format for any purpose, even commercially, under the following terms:
 - **You must give appropriate credit** and provide a link to the license. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
 - If you remix, transform, or build upon the material, **you may not distribute the modified material**.
-
-To view the full text of this license, visit: http://creativecommons.org/licenses/by-nd/4.0/.
 
 [Creative Commons - Frequently Asked Questions](https://creativecommons.org/faq/)
 
