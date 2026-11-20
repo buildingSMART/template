@@ -1,11 +1,7 @@
 # XYZ Repository 
 This is a template repository with no content.
 
-[![Official repository by buildingSMART International](https://img.shields.io/badge/buildingSMART-Official%20Repository-orange.svg)](https://www.buildingsmart.org/) 
-
 This repository contains the files, documentation, and history of a project.
-
-<img width="900" height="10" alt="bSI-slim-banner" src="https://github.com/user-attachments/assets/6161553e-3b27-470e-afdb-5023da9f7b8d" />
 
 ## Overview
 
@@ -59,12 +55,6 @@ Contributions are most welcome. All contributors who want to make changes to fil
 If you are seeking support, read [Support](./.github/SUPPORT.md) page.
 
 The projects are governed by buildingSMART processes and policies. You can read more in the [Governance](./.github/GOVERNANCE.md) section.
-
-### Thanks to all contributors
-
-<a href="https://github.com/buildingSMART/IFC4.x-development/graphs/contributors">
-  <img width="500" src="https://contrib.rocks/image?repo=buildingSMART/IFC4.x-development" />
-</a>
 
 ## Other relevant pages
 
