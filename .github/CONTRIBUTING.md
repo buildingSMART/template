@@ -8,9 +8,9 @@ Once approved by the appropriate committee, submissions may become part of the b
 
 By contributing, participants agree to follow:
 - [Contributing guidelines](#contributing-guidelines)
-- [Code Of Conduct](.github/CODE_OF_CONDUCT.md).
+- [Code Of Conduct](CODE_OF_CONDUCT.md).
 - [Contributor Licence Agreement (CLA)](https://cla-manager.buildingsmart.org/) (required signing to contribute changes) 
-- [License agreements and Copyright Notice](LICENSE.md)
+- [License agreements and Copyright Notice](../LICENSE.md)
 - [Terms of Service](https://www.buildingsmart.org/terms-of-service/)
 - [Intellectual Property Policy](https://app.box.com/s/rg081ahyq1euw8uw6efql6m2fcofm558)
 - [Developer's Certificate of Origin](https://developercertificate.org/)
@@ -18,7 +18,7 @@ By contributing, participants agree to follow:
 
 ## How to use GitHub 
 
-If you are new to the GitHub platform, you might want to see the [GitHub Introduction](.github/GitHub_intro.md) first.
+If you are new to the GitHub platform, you might want to see the [GitHub Introduction](GitHub_intro.md) first.
 
 ## Contributing guidelines
 
@@ -45,7 +45,7 @@ You may use generative AI tools to assist with contributions, provided that:
 
 ### Anyone
 * can read all content of the public repository, including code, documentation, issues, discussions and version history. 
-* can fork (copy) the materials in line with the appropriate [License agreements](LICENSE.md).
+* can fork (copy) the materials in line with the appropriate [License agreements](../LICENSE.md).
 * can post [Issues](https://github.com/buildingSMART/template/issues) and comment on them.
 * post and participate in [Discussions](https://github.com/buildingSMART/template/discussions).
 * can submit [Pull Requests](https://github.com/buildingSMART/template/pulls) (change proposals), after signing the [CLA](https://cla-manager.buildingsmart.org/).

@@ -17,7 +17,7 @@ Files are organised in this project as follows:
 ├── [schema](/schema) _- this is where the JSON Schema files are stored_ \
 ├── [docs](/docs) _- this is the source of documentation_ \
 │   ├── [implementationDocumentation](/implementationDocumentation) \
-│   └── [userManual](/userManual) \
+│   └── [user_manual](/docs/user_manual) \
 ├── [output](/output) \
 ├── [examples](/examples) - _example files to help use and implement the standard_ \
 ├── [tests](/tests) - _test suit to ensure consistency of implementation_ \
@@ -52,4 +52,4 @@ The official builds, containing compiled and deliverable files, are automaticall
 
 © buildingSMART International Ltd. All rights reserved. 
 
-Different licenses apply to parts of the repository. Read the [License](./license) for more details. Formal releases are licensed under [Creative Commons Attribution-NoDerivatives 4.0 International](https://creativecommons.org/licenses/by-nd/4.0/deed.en) (CC BY-ND 4.0).
+Different licenses apply to parts of the repository. Read the [License](./LICENSE.md) for more details. Formal releases are licensed under [Creative Commons Attribution-NoDerivatives 4.0 International](https://creativecommons.org/licenses/by-nd/4.0/deed.en) (CC BY-ND 4.0).
