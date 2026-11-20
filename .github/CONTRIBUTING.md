@@ -1,69 +1,69 @@
 # Contributing
 
-Contributions are welcomed and [anyone](#roles) may contribute through posting comments, discussionns, raising issues (problems or feature requests), and pull requests (direct change suggestions).
+Welcome, and thank you for your interest in contributing to openBIM!
 
-Some work is limited to the repository [Maintainers](#maintainers) and [buildingSMART Members](#members).
+Once approved by the appropriate committee, submissions may become part of the buildingSMART deliverables and publications.
+
+## Compliance
 
 By contributing, participants agree to follow:
-- [buildingSMART Code of Conduct](https://www.buildingsmart.org/wp-content/uploads/2023/01/Behaviour-Code-of-Conduct-Policy-2023.pdf)
+- [Contributing guidelines](#contributing-guidelines)
+- [Code Of Conduct](.github/CODE_OF_CONDUCT.md).
+- [Contributor Licence Agreement (CLA)](https://cla-manager.buildingsmart.org/) (applicable to Pull Reqests) 
 - [License agreements and Copyright Notice](LICENSE.md)
-- [Terms of Service](https://www.buildingsmart.org/wp-content/uploads/2026/01/bSI-TermsOfService-Feb-2026.pdf)
+- [Terms of Service](https://www.buildingsmart.org/terms-of-service/)
 - [Intellectual Property Policy](https://app.box.com/s/rg081ahyq1euw8uw6efql6m2fcofm558)
+- [Developer's Certificate of Origin](https://developercertificate.org/)
 - other relevant [policies](https://www.buildingsmart.org/about/policies/)
-
-Once approved, submissions may become part of buildingSMART deliverables and publications.
 
 ## How to use GitHub 
 
-If you are new to GitHub platform, you might want to see the [GitHub Introduction](.github/GitHub_intro.md) page first.
+If you are new to the GitHub platform, you might want to see the [GitHub Introduction](.github/GitHub_intro.md) first.
 
 ## Contributing guidelines
 
-* Before opening a new issue or pull request, please check the existing ones, perhaps someone already raised it.
-* Keep contributions focused on solving a single issue or bug.
-* Link Pull Requests to Issues by mentioning it. If an issue doesn't exist - add it first.
-* Be specific.
-* Be kind and respectful.
-* Explain the reason behind your feedback.
-* Ask questions when something is unclear.
-* Add examples, screenshots, or links when useful.
-* Avoid sarcasm or vague criticism.
-* Assume good intent.
+* Before opening a new one, please check existing [Issues](../../issues) or [Pull Requests](../../pulls) - perhaps someone already raised a similar one.
+* Before proposing a solution, familiarise yourself with existing ones. 
+* Keep contributions focused on solving a single issue.
+* Link [Pull Requests](../../pulls) to [Issues](../../issues) by mentioning them in PR description (e.g Fixes #123). If an issue doesn't exist, add it first.
+* Be specific and concise. Avoid unnecessary verbosity, repetition and overly elaborate language.
+* Explain the reason and context behind your contribution.
+* Add examples, screenshots, or links when useful and relevant.
+* Evidence is better than assumptions.
+* Love the problem more than the solution.
+* All communication and documentation must be in English.
+* The development process must be transparent, and results versioned.
+
+### AI-Assisted Contributions
+
+You may use generative AI tools to assist with contributions, provided that:
+- **Human oversight** - you must personally review, understand, test, and verify all generated content. You must exercise sufficient human judgment and creative direction over AI-assisted contributions to reasonably consider the resulting work as your original creation.
+- **Transparency** - Substantial use of AI-generated content must be disclosed in the Pull Request. A brief statement like 'This contribution was developed with AI assistance' is sufficient; detailed disclosure of tools, prompts, or scope is not required.
+- **Human sign-off** - AI tools must not be listed as commit authors, co-authors, or signatories. Human contributors remain accountable for the quality, accuracy, and security of their contributions.
 
 ## Roles
 
-Anyone can read all content of the public repository, read the [Discussions](https://github.com/buildingSMART/template/discussions) and [Issues](https://github.com/buildingSMART/template/issues), and copy (fork) the materials (in line with [License agreements](LICENSE.md)).
-
-### Contributors
-
-Contributors are all who engage in the repository from commenting on issues to submitting proposed changes to the standard. Anyone can contribute, not only [buildingSMART Members](#members), but not all contributions will be accepted. That is subject to buildingSMART processes and policies.
-
-Contributors can:
-* post [Issues](https://github.com/buildingSMART/template/issues) and comment on them 
-* post and participate in [Discussions](https://github.com/buildingSMART/template/discussions)
-* submit [Pull Requests](https://github.com/buildingSMART/template/pulls) (change proposals)
-
-GitHub differentiates contributors as all authors of commits that were approved and merged to the repository history. You can see that list here: https://github.com/buildingSMART/template/graphs/contributors?all=1
+### Anyone
+* can read all content of the public repository, including code, documentation, issues, discussions and version history. 
+* can fork (copy) the materials in line with the appropriate [License agreements](LICENSE.md).
+* can post [Issues](https://github.com/buildingSMART/template/issues) and comment on them.
+* post and participate in [Discussions](https://github.com/buildingSMART/template/discussions).
+* can submit [Pull Requests](https://github.com/buildingSMART/template/pulls) (change proposals), after [CLA](https://cla-manager.buildingsmart.org/).
 
 ### Maintainers
+* include buildingSMART International Management Office employees, relevant Working Group members and assigned individuals.
+* moderate issues - label, assign, close
+* moderate pull requests - review, approve/reject, merge
+* escalate significant decisions to the appropriate buildingSMART groups and committees
 
-The maintainers include bSI Management Office employees, relevant Working Group members and assigned indyviduals. 
-
-Repository maintainers are responsible for:
-
-* Managing issues and pull requests - review, approve, merge etc.
-* Ensuring consistency and quality
-* Coordinating releases
-* Building automation pipelines
-* Manage roles and access rights
-* Escalating significant decisions to the appropriate buildingSMART groups and committes
-
-### Members
-
-Chapter and Organizational Members of buildingSMART International who pay annual membership fees. Members can have voting rights as part of the Standards Commitee (SC). Within the SC, there are also techncial (SCTE) and executive (SCE) bodies that assess the proposed updates to buildingSMART standards.
-
-See: [bSI Membership and benefits](https://www.buildingsmart.org/about/get-involved/membership-and-benefits/)
-
+### Admins
+* manage automation pipelines
+* manage roles and access rights
+* maintain the repository settings
+* coordinate releases
+  
 ## Thank you
 
-Thank you for contributing. Clear issues, thoughtful comments, and careful reviews help make this repository better for everyone.
+Thank you for contributing. Community contributions, large or small, make projects like this possible. Apart from actual solutions, clear issues, thoughtful comments and careful reviews help make this repository better for everyone.
+
+There are several other ways in which you can get involved, beyond GitHub. Read more about becoming our member: [buildingSMART International Membership and benefits](https://www.buildingsmart.org/about/get-involved/membership-and-benefits/).
