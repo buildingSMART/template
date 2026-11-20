@@ -27,14 +27,7 @@ Tooling should be kept outside of the key repository.
 
 ## Contribution
 
-Contributions are most welcome. All contributors who want to make changes to files need to sign the Contributor License Agreement (CLA). Read more on [Contributing](./contributing.md). We also ask all users to follow our:
-* [Code of Conduct](./.github/CODE_OF_CONDUCT.md) (where you can also file a complaint if you witness unacceptable behaviour)
-* [Branching policy](./.github/BRANCHING.md).
-* [Security policy](./.github/SECURITY.md) (where you can also report a vulnerability)
-
-If you are seeking support, read [Support](./.github/SUPPORT.md) page.
-
-The projects are governed by buildingSMART processes and policies. You can read more in the [Governance](./.github/GOVERNANCE.md) section.
+Contributions are welcome. All contributors who want to make changes to files need to sign the Contributor License Agreement (CLA). Read more on [Contributing](.github/CONTRIBUTING.md). We also ask all users to follow our [Code of Conduct](./.github/CODE_OF_CONDUCT.md).
 
 ## Releases
 
