@@ -1,5 +1,3 @@
-# XYZ
-
 ![Banner](.github/assets/readme-banner.png)
 
 This is the official buildingSMART International GitHub repository for XYZ. 
