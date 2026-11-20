@@ -52,8 +52,8 @@ The official builds, containing compiled and deliverable files, are automaticall
 - [Implementer Assembly events](https://www.buildingsmart.org/implementers-assembly/)
 - [Software Certification](https://www.buildingsmart.org/compliance/software-certification/)
   
-## License
+## Copyright & License
 
 © buildingSMART International Ltd. All rights reserved. 
 
-Formal releases are licensed under [Creative Commons Attribution-NoDerivatives 4.0 International](https://creativecommons.org/licenses/by-nd/4.0/deed.en) (CC BY-ND 4.0), read [License](./license) for more details.
+Different licenses apply to parts of the repository. Read the [License](./license) for more details. Formal releases are licensed under [Creative Commons Attribution-NoDerivatives 4.0 International](https://creativecommons.org/licenses/by-nd/4.0/deed.en) (CC BY-ND 4.0).
