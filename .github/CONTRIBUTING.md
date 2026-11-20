@@ -9,7 +9,7 @@ Once approved by the appropriate committee, submissions may become part of the b
 By contributing, participants agree to follow:
 - [Contributing guidelines](#contributing-guidelines)
 - [Code Of Conduct](.github/CODE_OF_CONDUCT.md).
-- [Contributor Licence Agreement (CLA)](https://cla-manager.buildingsmart.org/) (applicable to Pull Reqests) 
+- [Contributor Licence Agreement (CLA)](https://cla-manager.buildingsmart.org/) (required signing to contribute changes) 
 - [License agreements and Copyright Notice](LICENSE.md)
 - [Terms of Service](https://www.buildingsmart.org/terms-of-service/)
 - [Intellectual Property Policy](https://app.box.com/s/rg081ahyq1euw8uw6efql6m2fcofm558)
@@ -48,7 +48,7 @@ You may use generative AI tools to assist with contributions, provided that:
 * can fork (copy) the materials in line with the appropriate [License agreements](LICENSE.md).
 * can post [Issues](https://github.com/buildingSMART/template/issues) and comment on them.
 * post and participate in [Discussions](https://github.com/buildingSMART/template/discussions).
-* can submit [Pull Requests](https://github.com/buildingSMART/template/pulls) (change proposals), after [CLA](https://cla-manager.buildingsmart.org/).
+* can submit [Pull Requests](https://github.com/buildingSMART/template/pulls) (change proposals), after signing the [CLA](https://cla-manager.buildingsmart.org/).
 
 ### Maintainers
 * include buildingSMART International Management Office employees, relevant Working Group members and assigned individuals.
