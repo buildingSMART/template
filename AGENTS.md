@@ -14,7 +14,6 @@ Follow any additional project-specific documentation and instructions relevant t
 
 - **Make minimal, focused changes.** Avoid unrelated modifications, unnecessary refactoring, or introducing dependencies without justification.
 - **Follow existing conventions.** Respect the repository's architecture, naming conventions, coding style, and established patterns.
-- **Prefer clarity over complexity.** Produce readable, maintainable code and documentation.
 - **Preserve compatibility.** Avoid breaking existing APIs, schemas, data structures, or supported workflows unless explicitly requested.
 - **Do not invent requirements.** When specifications or expected behaviour are unclear, identify the ambiguity rather than making unsupported assumptions.
 - **Respect human oversight.** Propose significant architectural, semantic, or normative changes for maintainer review.
@@ -98,7 +97,7 @@ Do not merge pull requests, publish releases, or make other consequential reposi
 ## Naming conventions
 
 - Official spelling of the keywords is:  `buildingSMART` (or `bSI` in short), `openBIM`, `bSDD`, `IFC`, `IDS`, `BCF`, `mvdXML`, `Validation Service`, `IFCX`, `openBIM API`.
-- Versioning of the standards should follow SemVer, and be separated with one whitespace. For example: `IFC 4.3.2`, `IDS 1.1`, `IFCX 0.1`.
+- Versioning of the standards should follow SemVer, and in prose be separated with one whitespace. For example: `IFC 4.3.2`, `IDS 1.1`, `IFCX 0.1`. Never change identifiers in schemas, examples or code (e.g. `IFC4X3_ADD2`)
 
 ## When in Doubt
 
