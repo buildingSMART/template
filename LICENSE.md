@@ -23,7 +23,7 @@ What you are allowed to do with the content of the repository depends on the typ
 | Content Type | License |
 |---|---|
 | Final Publications | CC BY-ND 4.0 |
-| Draft specification, documentation, schema | buildingSMART Draft Collaboration Licence |
+| Draft specification, documentation, schema | Covered by the CLA |
 | Software, tooling | Apache License 2.0 |
 | Test files, examples, and test suites | CC BY 4.0 (not ND) |
 
@@ -39,13 +39,6 @@ You are **free to share** — copy and redistribute the material in any medium o
 - If you remix, transform, or build upon the material, **you may not distribute the modified material**.
 
 [Creative Commons - Frequently Asked Questions](https://creativecommons.org/faq/)
-
-## buildingSMART Draft Collaboration Licence
-
-> [!WARNING]
-> NOT IN FORCE
-
-Draft Contribution Licence ... for the normative draft materials, backed by a Contributor Agreement that either assigns accepted contributions to bSI or gives bSI a very broad perpetual, irrevocable, sublicensable licence that expressly covers publication, modification, translation, integration into future editions, and sublicensing into ISO-facing outputs. 
 
 ## Software - the Apache License 2.0
 
