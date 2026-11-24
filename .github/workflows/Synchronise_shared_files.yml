@@ -18,12 +18,104 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - repository: bSDD
+          # - repository: IFC4.x-development
+          #   extra_branches: ""
+            
+          # - repository: IFC4.x-tooling
+          #   extra_branches: ""
+            
+          - repository: BCF-XML
             extra_branches: ""
+            
+          - repository: BCF-API
+            extra_branches: ""
+            
+          # - repository: IDS
+          #   extra_branches: ""
+            
+          # - repository: foundation-API
+          #   extra_branches: ""
+                        
+          # - repository: documents-API
+          #   extra_branches: ""
+            
+          # - repository: Standards-builds
+          #   extra_branches: ""
+            
+          # - repository: technical.buildingsmart.org
+          #   extra_branches: ""
+            
+          # - repository: bSDD
+          #   extra_branches: ""
+            
+          # - repository: validate
+          #   extra_branches: ""
+            
+          # - repository: ifc-validation-data-model
+          #   extra_branches: ""
+            
+          # - repository: ifc-gherkin-rules
+          #   extra_branches: ""
+          
+          # - repository: certification-scorecards
+          #   extra_branches: ""
+            
+          # - repository: Certification-datasets
+          #   extra_branches: ""
+                      
+          # - repository: IFC4.x-IF
+          #   extra_branches: ""
+            
+          # - repository: IFCX-CORE
+          #   extra_branches: ""
+            
+          # - repository: IFC5-development
+          #   extra_branches: ""
+            
+          # - repository: IFC4.x-specification-models
+          #   extra_branches: ""
+            
+          # - repository: Simple-Sample-Scene-Models
+          #   extra_branches: ""
+            
+          # - repository: IFC-translations
+          #   extra_branches: ""
+            
+          # - repository: bSI-notes
+          #   extra_branches: ""
+            
+          # - repository: IDS-Audit-tool
+          #   extra_branches: ""
+            
+          # - repository: pcert-practitioner-task-review-tool
+          #   extra_branches: ""
+            
+          # - repository: integration-work
+          #   extra_branches: ""
+            
+          # - repository: ifcx.dev
+          #   extra_branches: ""
+                  
+          # - repository: openBIM_Practitioner_exam_evaluation
+          #   extra_branches: ""
+            
+          # - repository: New-Sample-Test-Files
+          #   extra_branches: ""
+                      
+          # - repository: mvdXML
+          #   extra_branches: ""
+            
+          # - repository: NextGen-IFC 
 
-          # - repository: example-repo-2
-          #   extra_branches: "develop"
-
+          # - repository: cla-signatures
+          #   extra_branches: ""
+            
+          # - repository: cla-manager
+          #   extra_branches: ""
+          
+          # - repository: clabot-config
+          #   extra_branches: ""
+            
           # - repository: example-repo-3
           #   extra_branches: "develop release"
 
@@ -45,26 +137,41 @@ jobs:
           SOURCE="$GITHUB_WORKSPACE"
           TARGET="$ORGANIZATION/$REPOSITORY"
 
-          # Files to synchronise
-          FILES=(
-            # "README.md"
+          # Discover all tracked files
+          FILES=()
+
+          # Select what to skip
+          EXCLUDE=(
+            "README.md"
+            ".github/workflows/*"
+            ".github/CODEOWNERS"
             # "LICENSE.md"
-            "CITATION.cff"
             # "AGENTS.md"
-            # ".github/SUPPORT.md"
-            # ".github/SECURITY.md"
             # ".github/PULL_REQUEST_TEMPLATE.md"
-            # ".github/GitHub_intro.md"
             # ".github/GOVERNANCE.md"
             # ".github/FUNDING.yml"
-            # ".github/CONTRIBUTING.md"
-            # ".github/CODE_OF_CONDUCT.md"
             # ".github/BRANCHING.md"
-            # ".github//assets/readme-banner.png"
-            # ".github//assets/CC_BY-ND.svg"
-            # ".github/problem-report.md"
-            # ".github/feature-request.md"
           )
+
+          # Exclude from the rest:          
+          while IFS= read -r -d '' FILE; do
+            SKIP=false
+          
+            for PATTERN in "${EXCLUDE[@]}"; do
+              if [[ "$FILE" == $PATTERN ]]; then
+                SKIP=true
+                break
+              fi
+            done
+          
+            if [ "$SKIP" = false ]; then
+              FILES+=("$FILE")
+            fi
+          
+          done < <(git -C "$SOURCE" ls-files -z)
+          
+          # Display files selected for synchronisation
+          printf 'Synchronizing: %s\n' "${FILES[@]}"
 
           # Validate source files
           for FILE in "${FILES[@]}"; do
@@ -93,7 +200,7 @@ jobs:
 
           for BRANCH in $BRANCHES; do
 
-            SYNC_BRANCH="sync/shared-files/$BRANCH"
+            SYNC_BRANCH="sync-from-template"
 
             git fetch origin
 
