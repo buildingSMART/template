@@ -1,0 +1,139 @@
+name: Synchronise shared files
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: sync-shared-files
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - repository: buildingSMART/bSDD
+            extra_branches: ""
+
+          # - repository: example-repo-2
+          #   extra_branches: "develop"
+
+          # - repository: example-repo-3
+          #   extra_branches: "develop release"
+
+    env:
+      GH_TOKEN: ${{ secrets.SYNC_TOKEN }}
+      ORGANIZATION: ${{ github.repository_owner }}
+      REPOSITORY: ${{ matrix.repository }}
+      EXTRA_BRANCHES: ${{ matrix.extra_branches }}
+
+    steps:
+      - name: Checkout template repository
+        uses: actions/checkout@v4
+
+      - name: Synchronise files
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          SOURCE="$GITHUB_WORKSPACE"
+          TARGET="$ORGANIZATION/$REPOSITORY"
+
+          # Files to synchronise
+          FILES=(
+            # "README.md"
+            # "LICENSE.md"
+            "CITATION.cff"
+            # "AGENTS.md"
+            # ".github/SUPPORT.md"
+            # ".github/SECURITY.md"
+            # ".github/PULL_REQUEST_TEMPLATE.md"
+            # ".github/GitHub_intro.md"
+            # ".github/GOVERNANCE.md"
+            # ".github/FUNDING.yml"
+            # ".github/CONTRIBUTING.md"
+            # ".github/CODE_OF_CONDUCT.md"
+            # ".github/BRANCHING.md"
+            # ".github//assets/readme-banner.png"
+            # ".github//assets/CC_BY-ND.svg"
+            # ".github/problem-report.md"
+            # ".github/feature-request.md"
+          )
+
+          # Validate source files
+          for FILE in "${FILES[@]}"; do
+            test -f "$SOURCE/$FILE"
+          done
+
+          # Detect default branch
+          DEFAULT_BRANCH=$(gh repo view "$TARGET" \
+            --json defaultBranchRef \
+            --jq '.defaultBranchRef.name')
+
+          # Configure authentication
+          gh auth setup-git
+
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email \
+            "41898282+github-actions[bot]@users.noreply.github.com"
+
+          # Clone target repository
+          gh repo clone "$TARGET" "$RUNNER_TEMP/target"
+          cd "$RUNNER_TEMP/target"
+
+          # Combine default and additional branches
+          BRANCHES=$(printf '%s\n' \
+            "$DEFAULT_BRANCH" $EXTRA_BRANCHES | sort -u)
+
+          for BRANCH in $BRANCHES; do
+
+            SYNC_BRANCH="sync/shared-files/$BRANCH"
+
+            git fetch origin
+
+            git checkout -B "$SYNC_BRANCH" "origin/$BRANCH"
+
+            # Copy shared files
+            for FILE in "${FILES[@]}"; do
+              mkdir -p "$(dirname "$FILE")"
+              cp "$SOURCE/$FILE" "$FILE"
+              git add -- "$FILE"
+            done
+
+            # Skip if nothing changed
+            if git diff --cached --quiet; then
+              echo "$TARGET ($BRANCH): Already synchronised"
+              continue
+            fi
+
+            git commit -m "Synchronise shared template files"
+
+            git push --force-with-lease origin "$SYNC_BRANCH"
+
+            # Check for existing pull request
+            PR=$(gh pr list \
+              --repo "$TARGET" \
+              --base "$BRANCH" \
+              --head "$SYNC_BRANCH" \
+              --state open \
+              --json number \
+              --jq '.[0].number // empty')
+
+            if [ -z "$PR" ]; then
+              gh pr create \
+                --repo "$TARGET" \
+                --base "$BRANCH" \
+                --head "$SYNC_BRANCH" \
+                --title "Synchronise shared template files" \
+                --body "Automated synchronisation from the central template repository."
+            else
+              echo "Updated existing pull request #$PR"
+            fi
+
+          done
