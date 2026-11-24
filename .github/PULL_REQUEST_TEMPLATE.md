@@ -1,4 +1,10 @@
+## Related issue
 
-A reference to a related issue in your repository.
-A description of the changes proposed in the pull request.
-@mentions of the person or team responsible for reviewing proposed changes.
+Fixes #
+
+## What changed and why
+
+
+
+---
+- [ ] This contribution was developed with AI assistance (see [AI-Assisted Contributions](CONTRIBUTING.md#ai-assisted-contributions) for what is permitted)

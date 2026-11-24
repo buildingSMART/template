@@ -6,7 +6,7 @@ This repository is part of the openBIM ecosystem of buildingSMART International,
 
 AI agents contributing to this project must prioritise correctness, maintainability, interoperability, and alignment with applicable buildingSMART International standards.
 
-Before making changes, read the repository's [README](./README.md), [Contributing Guidelines](./CONTRIBUTING.md) (particularly on [AI Assisted Contributions](./CONTRIBUTING.md#ai-assisted-contributions)), and relevant technical documentation to understand the project's purpose, architecture, and conventions.
+Before making changes, read the repository's [README](./README.md), [Contributing Guidelines](./.github/CONTRIBUTING.md) (particularly on [AI Assisted Contributions](./.github/CONTRIBUTING.md#ai-assisted-contributions)), and relevant technical documentation to understand the project's purpose, architecture, and conventions.
 
 Follow any additional project-specific documentation and instructions relevant to the task.
 
@@ -14,7 +14,6 @@ Follow any additional project-specific documentation and instructions relevant t
 
 - **Make minimal, focused changes.** Avoid unrelated modifications, unnecessary refactoring, or introducing dependencies without justification.
 - **Follow existing conventions.** Respect the repository's architecture, naming conventions, coding style, and established patterns.
-- **Prefer clarity over complexity.** Produce readable, maintainable code and documentation.
 - **Preserve compatibility.** Avoid breaking existing APIs, schemas, data structures, or supported workflows unless explicitly requested.
 - **Do not invent requirements.** When specifications or expected behaviour are unclear, identify the ambiguity rather than making unsupported assumptions.
 - **Respect human oversight.** Propose significant architectural, semantic, or normative changes for maintainer review.
@@ -80,7 +79,7 @@ Do not claim that changes have been tested or validated unless the corresponding
 - Avoid introducing insecure dependencies or unsafe data-handling practices.
 - Treat external files, model data, and user input as potentially untrusted.
 - Do not upload or transmit repository contents or user data to external services unless explicitly authorised.
-- Report suspected security vulnerabilities through the designated private reporting process following [SECURITY.md](./SECURITY.md).
+- Report suspected security vulnerabilities through the designated private reporting process following [SECURITY.md](./.github/SECURITY.md).
 
 ## Contributions and Pull Requests
 
@@ -98,7 +97,7 @@ Do not merge pull requests, publish releases, or make other consequential reposi
 ## Naming conventions
 
 - Official spelling of the keywords is:  `buildingSMART` (or `bSI` in short), `openBIM`, `bSDD`, `IFC`, `IDS`, `BCF`, `mvdXML`, `Validation Service`, `IFCX`, `openBIM API`.
-- Versioning of the standards should follow SemVer, and be separated with one whitespace. For example: `IFC 4.3.2`, `IDS 1.1`, `IFCX 0.1`.
+- Versioning of the standards should follow SemVer, and in prose be separated with one whitespace. For example: `IFC 4.3.2`, `IDS 1.1`, `IFCX 0.1`. Never change identifiers in schemas, examples or code (e.g. `IFC4X3_ADD2`)
 
 ## When in Doubt
 
